@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@source '../views/**/*.blade.php';
+@source '../js/**/*.js';
+@source '../../vendor/livewire/livewire/src/**/*.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    /* Palette ONZE — Tailwind CSS v4, CSS-first */
+    --color-ink: #11120f;
+    --color-canvas: #f3f2ec;
+    --color-gallery: #e9e9e2;
+    --color-acid: #d8ff3e;
+    --color-blue: #2458ff;
+    --color-muted: #6f726b;
+    --color-success: #167a48;
+    --color-error: #c73131;
+
+    /* Barlow Condensed: impact sportif. Manrope: lecture. Space Grotesk: prix. */
+    --font-display: 'Barlow Condensed', 'Arial Narrow', ui-sans-serif, sans-serif;
+    --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-price: 'Space Grotesk', ui-monospace, monospace;
+
+    --shadow-product: 0 24px 80px rgb(17 18 15 / 0.10);
+    --ease-sport: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-width: 320px;
+    }
+
+    button,
+    summary,
+    label,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button,
+    summary {
+        cursor: pointer;
+    }
+
+    input::placeholder {
+        opacity: 1;
+    }
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
